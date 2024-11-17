@@ -1,0 +1,317 @@
+//Task 1
+
+import java.util.Scanner;
+
+public class Task1
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a positive integer N: ");
+        int N = sc.nextInt();
+        
+        int count = 1;
+        int num = 2;
+        
+        while (count <= N)
+        {
+            int divisors = 0;
+            
+            for (int i = 1; i <= num; i++)
+            {
+                if (num % i == 0)
+                {
+                    divisors++;
+                }
+            }
+            
+            if (divisors == 2)
+            {
+                System.out.println(num);
+                count++;
+            }
+            
+            num++;
+        }
+        
+        sc.close();
+    }
+}
+
+//Task 2
+
+import java.util.Scanner;
+
+public class Task2
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of N: ");
+        int N = sc.nextInt();
+        
+        int y = 0;
+        
+        for (int i1 = 1; i1 <= N; i1++)
+        {
+            int sum = 0;
+            
+            for (int i2 = 1; i2 <= i1; i2++)
+            {
+                sum += i2;
+            }
+            
+            y -= sum;
+        }        
+        System.out.println("The value of y: " + y);
+        
+        sc.close();
+    }
+}
+
+//Task 3
+
+import java.util.Scanner;
+
+public class Task3
+{
+    public static void main(String[] args)
+    {
+        // I will explain my thought process here:
+        // In this case, only positive even numbers are counted.
+        // It is mentioned that the loop should stop if any odd number is entered.
+        // However, it is not specified whether the odd number must be positive or negative to stop, 
+        // So, I will stop the loop for both positive and negative odd numbers.
+        // However, if there is a negative even number as input it will ask for another input.
+      
+        Scanner sc = new Scanner(System.in);
+
+        while (true)
+        {
+            System.out.print("Enter Number: ");
+            int num = sc.nextInt();
+                        
+            if (num < 0 && num % 2 == 0)
+            {
+                System.out.println("Negative even numbers are not allowed. Please enter a positive number.");
+                continue;
+            }
+
+            if (num % 2 != 0)
+            {
+                break;
+            }
+
+            if (num < 0 && num % 2 != 0)
+            {
+                break;
+            }
+
+            int divisors = 0;
+            for (int i = 1; i <= num; i++)
+            {
+                if (num % i == 0)
+                {
+                    divisors++;
+                }
+            }
+            
+            System.out.println(num + " has " + divisors + " divisors");
+        }
+        
+        sc.close();
+    }
+}
+
+//Task 4
+
+import java.util.Scanner;
+
+public class Task4
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the number of test cases: ");
+        int N = sc.nextInt();
+
+        for (int testCase = 1; testCase <= N; testCase++)
+        {
+            System.out.println("Enter X and Y: ");
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
+
+            int sum = 0;
+            int oddCount = 0;
+
+            if (X % 2 == 0)
+            {
+                X++;
+            }
+
+            while (oddCount < Y)
+            {
+                sum += X;
+                X += 2;
+                oddCount++;
+            }
+
+            System.out.println(sum);
+        }
+
+        sc.close();
+    }
+}
+
+//Task 5
+
+import java.util.Scanner;
+
+public class Task5
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter the Length: ");
+        int length = sc.nextInt();
+        
+        System.out.print("Enter the Width: ");
+        int width = sc.nextInt();
+        
+        for (int i = 1; i <= width; i++)
+        {
+            
+            for (int j = 1; j <= length; j++)
+            {
+                System.out.print(j + " ");
+            }
+            
+            System.out.println();
+            
+        }
+        
+        sc.close();
+    }
+}
+
+//Task 6
+
+import java.util.Scanner;
+
+public class Task6
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter the height: ");
+        int height = sc.nextInt();
+        
+        for (int i = 1; i <= height; i++)
+        {
+            for (int j = 1; j <= height - i; j++)
+            {
+                System.out.print("  ");
+            }
+            
+            for (int k = 1; k <= i; k++)
+            {
+                System.out.print(k + " ");
+            }
+            
+            System.out.println();
+        }
+        
+        sc.close();
+    }
+}
+
+//Task 7
+
+import java.util.Scanner;
+
+public class Task7
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the height: ");
+        int height = sc.nextInt();
+
+        for (int i = 1; i <= height; i++)
+        {
+            for (int j = 1; j <= height - i; j++)
+            {
+                System.out.print("  ");
+            }
+            
+            for (int k = 1; k <= 2 * i - 1; k++)
+            {
+                System.out.print(k + " ");
+            }
+           
+            System.out.println();
+        }
+
+        sc.close();  
+    }
+}
+
+//Task 8
+
+import java.util.Scanner;
+
+public class Task8
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the starting number: ");
+        int start = sc.nextInt();
+
+        System.out.print("Enter the ending number: ");
+        int end = sc.nextInt();
+
+        System.out.println("Armstrong numbers:");
+
+        for (int i = start; i <= end; i++)
+        {
+            int temp = i;
+            int digits = 0;
+            
+            while (temp > 0)
+            {
+                digits++;
+                temp /= 10;
+            }
+
+            temp = i;
+            int sum = 0;
+            
+            while (temp > 0)
+            {
+                int digit = temp % 10;
+                int power = 1;
+
+                for (int j = 1; j <= digits; j++)
+                {
+                    power *= digit;
+                }
+
+                sum += power;
+                temp /= 10;
+            }
+
+            if (sum == i)
+            {
+                System.out.println(i);
+            }
+        }
+
+        sc.close();
+    }
+}

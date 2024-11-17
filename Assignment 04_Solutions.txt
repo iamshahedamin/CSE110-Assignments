@@ -1,0 +1,477 @@
+//Task 1(a)
+
+public class Task1a
+{   
+    public static void main(String[] args) 
+    {        
+        
+        int i1 = 24;
+        
+        while (i1 >= -6) 
+        {
+            if(i1 == -6)
+            {
+                System.out.print(i1);
+            }
+            else
+            {
+                System.out.print(i1 + ", "); 
+            }
+            
+            i1 -= 6;
+            
+        }
+        
+    }    
+}
+
+//Task 1(b)
+
+public class Task1b
+{    
+    public static void main(String[] args) 
+    {        
+        int i2 = -10;
+        
+        while (i2 <= 20) 
+        {
+            
+            if(i2 == 20)
+            {
+                
+                System.out.print(i2);
+                
+            }
+            
+            else               
+            {
+                
+                System.out.print(i2 + ", "); 
+                
+            }
+            
+            i2 += 5;
+            
+        }
+        
+    }
+}
+
+//Task 2
+
+import java.util.Scanner;
+
+public class Task2 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("How many numbers, N?: ");
+        
+        int N = sc.nextInt();
+        int sum = 0;
+        
+        System.out.println("Input the " + N + " numbers: ");
+        for (int i = 0; i < N; i++) 
+        {
+            int n = sc.nextInt();
+            sum += n;
+        }
+        
+        double avg = (double) sum / N;
+        System.out.println("The sum of " + N + " no is: " + sum);
+        System.out.println("The Average is: " + avg);
+        
+        sc.close();
+        
+    }
+}
+
+//Task 3
+
+import java.util.Scanner;
+
+public class Task3 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        while (true) 
+        {
+            System.out.print("Enter Number: ");
+            int n = sc.nextInt();
+            
+            if (n < 0)
+            {
+                
+                break;
+                
+            }
+            
+            else
+            {
+                
+                int numbersquared = n * n;
+                System.out.println(n + " ^ 2 = " + numbersquared);
+                
+            } 
+        }
+        
+        sc.close();
+        
+    }
+}
+
+//Task 4
+
+import java.util.Scanner;
+
+public class Task4
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter an integer: ");
+        int n = sc.nextInt();
+        
+        System.out.println("Divisors of " + n + ":");
+        
+        for (int i = 1; i <= n; i++)
+        {
+            
+            if (n % i == 0)
+            {
+                
+                System.out.println(i);
+                
+            }
+            
+        }
+        
+        sc.close();
+        
+    }
+}
+
+//Task 5
+
+import java.util.Scanner;
+
+public class Task5
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter an integer: ");
+        int n1 = sc.nextInt();
+        
+        int nonNegative = 0;
+        int negative = 0;
+        
+        for (int i = 1; i <= n1; i++)
+        {
+            
+            System.out.print("Enter number " + i + ": ");
+            int n2 = sc.nextInt();
+            
+            if (n2 >= 0)
+            {
+                
+                nonNegative += 1;
+                
+            }
+            
+            else 
+            {
+                
+                negative += 1;
+                
+            }
+            
+        }
+        
+        System.out.println(nonNegative + " Non-negative Numbers");
+        System.out.println(negative + " Negative Numbers");
+        
+        sc.close();
+                
+    }
+    
+}
+
+//Task 6
+
+import java.util.Scanner;
+
+public class Task6
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Input number of terms: ");
+        int n = sc.nextInt();
+        
+        int sum = 0;
+        
+        System.out.println("The odd numbers are:");
+        
+        for (int i = 1; i <= n; i++)
+        {
+            
+            int odd = (2 * i) - 1;
+            //I used the general form of odd numbers (2n - 1) where (n = 1, 2, 3, ... ... ...)
+            
+            System.out.println(odd);
+            
+            sum += odd;
+            
+        }
+        
+        System.out.println("The Sum of odd Natural Numbers up to " + n + " terms is: " + sum);
+        
+        sc.close();
+        
+    }
+}
+
+//Task 7
+
+import java.util.Scanner;
+
+public class Task7
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int sum = 0;
+        
+        for (int i = 1; i <= 10; i++)
+        {
+            
+            System.out.print("Enter Number: ");
+            int n = sc.nextInt();
+            
+            sum += n;
+            System.out.println("Sum = " + sum);
+            
+        }
+        
+        sc.close();
+        
+    }
+}
+
+//Task 8
+
+import java.util.Scanner;
+
+public class Task8
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter a positive integer: ");
+        int n = sc.nextInt();
+        
+        for (int i = 0; i <= n; i++)
+        {
+            
+            if (i % 5 == 0 && i % 3 != 0)
+            {
+              
+                System.out.println(i);
+                
+            }
+            
+        }
+        
+        sc.close();
+        
+    }   
+}
+
+//Task 9
+
+import java.util.Scanner;
+
+public class Task9
+{
+    
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        
+        int digitCount = 0;
+        
+        while (n != 0)
+        {
+            
+            n /= 10;
+            digitCount++;
+            
+        }
+        
+        System.out.println("Total digits = " + digitCount);
+        sc.close();
+        
+    }
+    
+}
+
+//Task 10
+
+import java.util.Scanner;
+
+public class Task10
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        int m = n;
+        
+        int digitCount = 0;
+        
+        while (m != 0)
+        {
+            
+            m /= 10;
+            digitCount++;
+            
+        }
+        
+        int divisor = (int) Math.pow(10, digitCount - 1);
+        
+        int loopCount = 0;
+        while (divisor != 0)
+        {
+            
+            int digit = n / divisor;
+            
+            System.out.print(digit);
+            
+            n %= divisor; 
+            divisor /= 10; 
+            loopCount++;
+            
+                if (loopCount != digitCount)
+            {
+                    
+                System.out.print(", ");
+                
+            }
+                
+        }
+        
+        sc.close(); 
+    }
+}
+
+//Task 11
+
+import java.util.Scanner;
+
+public class Task11
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        
+        /*(a) Prime number check conditions: I will try to explain the logic
+        
+          ==> if the number is less than or equal to 1, it is not a prime number.
+          
+          ==> for each number from 2 to the square root of the number, 
+              if the number is divisible by any of these, it is not a prime number.
+              if no divisors are found (from 2 to the square root of the number), it is a prime number.
+         */
+        
+        boolean primeCondition = !(n <= 1);
+        double sqrtn = Math.sqrt(n);
+            
+        for (int i = 2; i <= sqrtn; i++)
+        {
+            
+            if (n % i == 0)
+            {
+                
+                primeCondition = false;
+                break;
+              
+            }
+            
+        }
+        
+        if (primeCondition)
+        {
+            
+            System.out.println(n + " is a prime number");
+            
+        } 
+        
+        else 
+            
+        {
+            
+            System.out.println(n + " is not a prime number");
+            
+        }
+        
+        /*(b) Perfect number check conditions: I will try to explain the logic
+          
+          ==> A perfect number is a number that is equal to the sum of its divisors,
+          excluding the number itself.
+         */
+        
+        int sumofDivisors = 0;
+        
+        for (int j = 1; j < n; j++) //j < n becacue the divisor which is  equals to n must be excluded
+        {
+            
+            if (n % j == 0)
+            {
+                
+                sumofDivisors += j;
+                
+            }
+            
+        }
+        
+        if (sumofDivisors == n)
+        {
+            
+            System.out.println(n + " is a perfect number");
+            
+        } 
+        
+        else 
+        {
+            
+            System.out.println(n + " is not a perfect number");
+            
+        }
+        
+    }
+}

@@ -1,0 +1,387 @@
+//Task 01
+
+import java.util.Scanner;
+
+public class Task1
+{
+    public static void main(String[] args) 
+    {        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String str1 = sc.nextLine();
+               
+        String resultString = "";
+        
+        for (int i = 0; i <= str1.length()-1; i++)
+        {
+            char ch1 = str1.charAt(i);
+            
+            if (ch1 >= 'a' && ch1 <= 'z') 
+            {
+                ch1 = (char) (ch1 - 32);
+            }
+            
+            resultString += ch1;
+        }        
+        System.out.println("Modified string: " + resultString);
+        sc.close();
+    }
+}
+
+//Task 02
+
+import java.util.Scanner;
+
+public class Task2
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String str1 = sc.nextLine();
+        
+        String reversedString = "";
+        
+        for (int i = 0; i <= str1.length() - 1; i++) 
+        {
+            reversedString = str1.charAt(i) + reversedString;
+        }
+
+        if (reversedString.equals(str1))
+        {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+        sc.close();
+    }
+}
+
+//Task 03
+
+import java.util.Scanner;
+
+public class Task3
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter a string: ");
+        String str1 = sc.nextLine();
+        
+        System.out.println("Enter the character to split by: ");
+        char splittingChar = sc.next().charAt(0);
+        
+        String tempString = "";
+        
+        for (int i = 0; i <= str1.length() - 1; i++)
+        {
+            char ch1= str1.charAt(i);
+            
+            if (ch1 == splittingChar)
+            {
+                if (tempString.length() > 0) 
+                {
+                    System.out.println(tempString);
+                }              
+                tempString = ""; //this is for resetting the temporary string
+            } 
+            
+            else
+            {
+                tempString += ch1;
+            }
+        }
+        
+        if (tempString.length() > 0) // this is for printing anything which is after the last split
+        {
+            System.out.println(tempString);
+        }
+        sc.close();
+    }
+}
+
+//Task 04
+
+import java.util.Scanner;
+
+public class Task4 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter a string: ");
+        String str1 = sc.nextLine();
+        
+        String reversedString = "";
+        
+        for (int i = 0; i <= str1.length() - 1; i++)
+        {
+            reversedString = str1.charAt(i) + reversedString;
+        }       
+        System.out.println("Reversed string: " + reversedString);
+        sc.close();
+    }
+}
+
+//Task 05
+
+import java.util.Scanner;
+
+public class Task5 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the phrase: ");
+        String str1 = sc.nextLine();
+        
+        int vowelCount = 0;
+        int consonantCount = 0;
+        
+        str1 = str1.toLowerCase(); // I am converting all the string to lower case for convenience
+        
+        for (int i = 0; i <= str1.length() - 1; i++)
+        {
+            char ch1 = str1.charAt(i);
+            
+            if (ch1 == 'a' || ch1 == 'e' || ch1 == 'i' || ch1 == 'o' || ch1 == 'u')
+            {
+                vowelCount++;
+            }
+
+            else if (ch1 >= 'a' && ch1 <= 'z') // this ensures no other charachter besides a-z are considered consonants
+            {
+                consonantCount++;
+            }
+        }
+        
+        if (vowelCount > 0 && consonantCount > 0 && vowelCount % 3 == 0 && consonantCount % 5 == 0)
+        {
+            System.out.println("Aaarr! Me Plunder!!");
+        } 
+        
+        else
+        {
+            System.out.println("Blimey! No Plunder!!");
+        }
+        sc.close();
+    }
+}
+
+//Task 06
+
+import java.util.Scanner;
+
+public class Task6
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a sentence: ");
+        String str1 = sc.nextLine();
+        
+        int n = str1.length();
+       
+        for (int i = str1.length() - 1; i >= 0; i--)
+        {
+            if (str1.charAt(i) == ' ')
+            {
+                // printing the word between the current index and n
+                for (int j = i + 1; j <= n-1; j++)
+                {
+                    System.out.print(str1.charAt(j));
+                }
+                System.out.print(" "); // space between words
+                n = i; // updating n for the next word
+            }
+        }
+        
+        // printing the first word because it does not have a space befor it
+        for (int i = 0; i <= n-1; i++)
+        {
+            System.out.print(str1.charAt(i));
+        }
+        sc.close();
+    }
+}
+
+//Task 07
+
+import java.util.Scanner;
+
+public class Task7 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the first string: ");
+        String str1 = sc.nextLine();
+
+        System.out.println("Enter the second string: ");
+        String str2 = sc.nextLine();
+
+        String resultString = "";
+
+        for (int i = 0; i <= str1.length() - 1; i++) 
+        {
+            char ch1 = str1.charAt(i);
+            boolean Common = false;
+
+            for (int j = 0; j <= str2.length() - 1; j++) 
+            {
+                if (ch1 == str2.charAt(j)) 
+                {
+                    Common = true;
+                    break;
+                }
+            }
+
+            if (!Common) 
+            {
+                resultString += ch1;
+            }
+        }
+
+        for (int i = 0; i <= str2.length() - 1; i++) 
+        {
+            char ch2 = str2.charAt(i);
+            boolean Common = false;
+
+            for (int j = 0; j <= str1.length() - 1; j++) 
+            {
+                if (ch2 == str1.charAt(j)) 
+                {
+                    Common = true;
+                    break;
+                }
+            }
+
+            if (!Common) 
+            {
+                resultString += ch2;
+            }
+        }
+
+        String upperCaseResult = "";
+        for (int i = 0; i <= resultString.length() - 1; i++) 
+        {
+            char ch3 = resultString.charAt(i);
+
+            if (ch3 >= 'a' && ch3 <= 'z') 
+            {
+                ch3 = (char) (ch3 - 32);
+            }
+
+            upperCaseResult += ch3;
+        }
+        System.out.println("Result: " + upperCaseResult);
+        sc.close();
+    }
+}
+
+//Task 08
+
+import java.util.Scanner;
+
+public class Task8
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a sentence: ");
+        String str1 = sc.nextLine();
+
+        boolean LowerCase = true;  // starting with lowercase
+
+        for (int i = 0; i < str1.length(); i++) 
+        {
+            char ch = str1.charAt(i);
+
+            if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z') 
+            {
+                if (LowerCase) 
+                {
+                    if (ch >= 'A' && ch <= 'Z') 
+                    {
+                        ch = (char) (ch + 32);
+                    }
+                } 
+                else 
+                {
+                    if (ch >= 'a' && ch <= 'z') 
+                    {
+                        ch = (char) (ch - 32);
+                    }
+                }
+                LowerCase = !LowerCase;
+            }
+            System.out.print(ch);
+        }
+        sc.close();
+    }
+}
+
+//Task 09
+
+import java.util.Scanner;
+
+public class Task9 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a password: ");
+        String password = sc.nextLine();
+
+        boolean Uppercase = false;
+        boolean Lowercase = false;
+        boolean Digit = false;
+        boolean Special = false;
+
+        if (password.length() >= 8) 
+        {
+            for (int i = 0; i <= password.length() - 1; i++) 
+            {
+                char ch = password.charAt(i);
+
+                if (ch >= 'A' && ch <= 'Z') 
+                {
+                    Uppercase = true;
+                }
+                else if (ch >= 'a' && ch <= 'z') 
+                {
+                    Lowercase = true;
+                }
+                else if (ch >= '0' && ch <= '9') 
+                {
+                    Digit = true;
+                }
+                else 
+                {
+                    Special = true;
+                }
+            }
+            
+            if (Uppercase && Lowercase && Digit && Special) 
+            {
+                System.out.println("True");
+            } 
+            else 
+            {
+                System.out.println("False");
+            }
+        } 
+        else 
+        {
+            System.out.println("False");
+        }
+        sc.close();
+    }
+}
